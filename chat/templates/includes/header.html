@@ -1,0 +1,45 @@
+{% load static %}
+
+<header class="bg-pink-200 text-pink-600 shadow-md">
+  <div x-data="{ open: false }" class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="{% static 'logo.png' %}" alt="App Logo" class="h-10 w-10 rounded-full" />
+      <a href="{% url 'home' %}" class="text-2xl font-semibold">ChitChat</a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 font-semibold">
+      <a href="{% url 'home' %}" class="hover:text-pink-800">Home</a>
+      <a href="{% url 'chat' %}" class="hover:text-pink-800">Chat</a>
+      <a href="{% url 'login' %}" class="hover:text-pink-800">Login</a>
+      <a href="{% url 'signup' %}" class="hover:text-pink-800">Sign Up</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Animated Hamburger) -->
+    <button @click="open = !open" class="md:hidden focus:outline-none relative w-10 h-10 flex flex-col justify-center items-center z-10">
+      <div class="relative w-full">
+        <!-- Top Line -->
+        <span :class="open ? 'rotate-45 translate-y-0' : '-translate-y-1.5'" class="absolute left-0 bg-white h-1 w-full rounded transition-all duration-300 ease-in-out"> </span>
+        <!-- Bottom Line -->
+        <span :class="open ? '-rotate-45 translate-y-0 w-full' : 'translate-y-1.5 w-3/4'" class="absolute right-0 bg-white h-1 rounded transition-all duration-300 ease-in-out">
+        </span>
+      </div>
+    </button>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div
+      x-show="open"
+      class="fixed inset-0 bg-gray-900 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold transition-all duration-300"
+      x-transition.opacity.scale
+    >
+      <!-- Menu Links -->
+      <a href="{% url 'home' %}" class="hover:text-blue-300" @click="open = false"> <i class="fas fa-home"></i> Home </a>
+      <a href="{% url 'chat' %}" class="hover:text-blue-300" @click="open = false"> <i class="fas fa-home"></i> Chat </a>
+      <a href="{% url 'login' %}" class="hover:text-blue-300" @click="open = false"> <i class="fas fa-sign-in-alt"></i> Login </a>
+      <a href="{% url 'signup' %}" class="hover:text-blue-300" @click="open = false"> <i class="fas fa-user-plus"></i> Sign Up </a>
+    </div>
+  </div>
+</header>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
