@@ -15,10 +15,12 @@ constantly==23.10.4
 cookiecutter==2.6.0
 cryptography==44.0.0
 daphne==4.1.2
+dj-database-url==2.3.0
 Django==5.1.5
 django-browser-reload==1.17.0
 django-tailwind==3.8.0
 gunicorn==23.0.0
+h11==0.14.0
 hyperlink==21.0.0
 idna==3.10
 incremental==24.7.2
@@ -27,6 +29,7 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 mdurl==0.1.2
 packaging==24.2
+psycopg2-binary==2.9.10
 pyasn1==0.6.1
 pyasn1_modules==0.4.1
 pycparser==2.22
@@ -48,4 +51,5 @@ types-python-dateutil==2.9.0.20241206
 typing_extensions==4.12.2
 tzdata==2025.1
 urllib3==2.3.0
+uvicorn==0.34.0
 zope.interface==7.2
