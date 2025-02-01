@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-plw5t2i+)t%+j%xvi77)q(#5^jgo4f3yi7_t3((5+ka72zsgqm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chitchat-y79m.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['devrgd-chitchat.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
